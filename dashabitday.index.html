@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Даша, с днём рождения!</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: radial-gradient(circle at top, #fff0f6, #ffe3ef 45%, #ffd1e3);
+    overflow: hidden;
+  }
+  .card {
+    position: relative;
+    width: min(92vw, 520px);
+    padding: 48px 28px 40px;
+    border-radius: 36px;
+    background: rgba(255,255,255,.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 24px 60px rgba(214,51,132,.22);
+    text-align: center;
+    border: 1px solid rgba(255,255,255,.9);
+    animation: in .9s ease both;
+  }
+  @keyframes in {
+    from { opacity: 0; transform: translateY(20px) scale(.97); }
+    to { opacity: 1; transform: none; }
+  }
+  .bouquet {
+    font-size: clamp(80px, 24vw, 150px);
+    line-height: 1;
+    filter: drop-shadow(0 16px 18px rgba(214,51,132,.2));
+    animation: sway 3.5s ease-in-out infinite;
+  }
+  @keyframes sway {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+  }
+  h1 {
+    margin: 10px 0 8px;
+    font-size: clamp(28px, 7vw, 44px);
+    color: #c2185b;
+    line-height: 1.1;
+  }
+  .name {
+    display: inline-block;
+    background: linear-gradient(90deg, #ff4f9a, #ff8a5c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 900;
+  }
+  p {
+    margin: 10px auto 0;
+    max-width: 34ch;
+    color: #8a3d5c;
+    font-size: clamp(15px, 4vw, 18px);
+    line-height: 1.5;
+  }
+  .hearts {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    border-radius: inherit;
+  }
+  .hearts span {
+    position: absolute;
+    bottom: -30px;
+    font-size: 18px;
+    animation: rise linear infinite;
+    opacity: .8;
+  }
+  @keyframes rise {
+    to { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+  }
+  .hearts span:nth-child(1) { left: 8%; animation-duration: 7s; animation-delay: 0s; }
+  .hearts span:nth-child(2) { left: 22%; animation-duration: 9s; animation-delay: 1s; }
+  .hearts span:nth-child(3) { left: 38%; animation-duration: 8s; animation-delay: 2s; }
+  .hearts span:nth-child(4) { left: 55%; animation-duration: 10s; animation-delay: .5s; }
+  .hearts span:nth-child(5) { left: 72%; animation-duration: 7.5s; animation-delay: 1.5s; }
+  .hearts span:nth-child(6) { left: 88%; animation-duration: 9.5s; animation-delay: 2.5s; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="hearts">
+      <span>💗</span><span>🌸</span><span>💖</span>
+      <span>🌷</span><span>💕</span><span>✨</span>
+    </div>
+
+    <div class="bouquet">💐</div>
+
+    <h1><span class="name">Даша</span>,<br>с днём рождения!</h1>
+
+    <p>
+      Пусть этот букет принесёт море улыбок, тёплых слов
+      и самых счастливых дней. Ты — лучшее, что случилось
+      с этим миром сегодня!
+    </p>
+  </div>
+</body>
+</html>
